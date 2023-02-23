@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FOR YOU &#60;3</title>
+    <title>WEB PRIBADOS</title>
     <style>
       html,
       body,
@@ -27,10 +27,42 @@
       }
     </style>
   </head>
-  <body>
+  <body onload="maaf()">
     <div class="container">
-      <p>Maaf gak bisa ngungkapin langsung &#60;3</p>
+      <p id="write"></p>
     </div>
   </body>
-</html>
+  <script>
+    var text = document.getElementById('write')
+    var i = 0
+    var txt1 = 'Maaf gak berani buat ngungkapin langsung'
+    var txt2 = 'KONTOL' /* The text */
+    var speed = 90 /* The speed/duration of the effect in milliseconds */
 
+    function maaf() {
+      if (i < txt1.length) {
+        text.innerHTML += txt1.charAt(i)
+        i++
+        setTimeout(maaf, speed)
+      } else {
+        setTimeout(function () {
+          i = 0
+          text.innerHTML = ''
+          terimakasih()
+        }, 800)
+      }
+    }
+
+    function terimakasih() {
+      if (i < txt2.length) {
+        text.innerHTML += txt2.charAt(i)
+        i++
+        setTimeout(terimakasih, speed)
+      } else {
+        setTimeout(function () {
+          text.innerHTML += ' &#60;3'
+        }, 600)
+      }
+    }
+  </script>
+</html>
